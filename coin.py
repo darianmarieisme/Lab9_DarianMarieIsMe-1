@@ -30,12 +30,12 @@ class Coin:
 
             self.__sideup = "Tails"
 
-    def get_sideup(self):
-        '''Method to return the "heads or "tails" string
+    def get_sideup(self) -> str:
+        '''Method to return the "Heads or "Tails" string
         args:
             the object using the method
         returns:
-            the private state of the coin "heads" or "tails"
+            the private state of the coin "Heads" or "Tails"
         '''
         return self.__sideup
 

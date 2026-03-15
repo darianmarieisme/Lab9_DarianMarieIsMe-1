@@ -32,7 +32,7 @@ class Player:
         args:
             the object being used by the class
         '''
-        self.__coin.get_sideup()
+        return self.__coin.get_sideup()
 
     def win_coin(self):
         '''This method increments the wallet by an integer of one

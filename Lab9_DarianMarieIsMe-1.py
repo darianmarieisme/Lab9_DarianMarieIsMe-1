@@ -3,7 +3,7 @@ Darian Marie Bruce
 This is a matching coin game
 03/14/2026'''
 
-import player
+from player import Player
 
 #color codes ansi escape sequences
 
@@ -15,13 +15,13 @@ reset: str = "\033[0m"
 
 def main() -> None:
     
-    player1 = player(f"Player {orange}1{reset}")
+    player1 = Player(f"Player {orange}1{reset}")
 
-    player2 = player(f"Player {orange}2{reset}")
+    player2 = Player(f"Player {orange}2{reset}")
 
     game: bool = True
 
-    print(f"-"*3,"Coin {purple}Match{reset} Game","-"*3)
+    print("-"*3,f"Coin {purple}Match{reset} Game","-"*3)
 
     while game == True:
         gamestatus: str = input(f"{purple}Do{reset} you want to toss the coins? (y/n):").lower()
@@ -36,7 +36,7 @@ def main() -> None:
             p1_turn: str = player1.get_coin_side()
             p2_turn: str = player2.get_coin_side()
 
-            print(f"{player1} tossed {p1_turn}\n{player2} tossed {p2_turn}")
+            print(f"{player1.get_name()} tossed {p1_turn}\n{player2.get_name()} tossed {p2_turn}")
 
             if p1_turn == p2_turn:
 
@@ -60,7 +60,7 @@ def main() -> None:
                 p1_wallet: int = player1.get_wallet()
                 p2_wallet: int = player2.get_wallet()
 
-                print(f"{player1} has {orange}{p1_wallet}{reset} coin(s).\n{player2} has {orange}{p2_wallet}{reset} coin(s).")
+                print(f"{player1.get_name()} has {orange}{p1_wallet}{reset} coin(s).\n{player2.get_name()} has {orange}{p2_wallet}{reset} coin(s).")
 
         elif gamestatus == "n":
             
@@ -91,3 +91,6 @@ def main() -> None:
             print("Input is invalid. Please try again.")
             continue
 
+
+if __name__ == "__main__":
+    main()

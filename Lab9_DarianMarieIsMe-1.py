@@ -14,6 +14,13 @@ reset: str = "\033[0m"
 
 def toss_coin()
 
+    play = input(f"{purple}Do{reset} you want to toss the coins? (y/n):").lower()
+
+    if play == "y":
+
+    else:
+        continue
+    
     
 
 def main() -> None:
@@ -22,13 +29,22 @@ def main() -> None:
 
     player2 = player("Player 2")
 
-    while True:
-        gamestatus: str = input("Do you want to play the game? Type Y or N").lower()
+    game = True
+
+    print(f"-"*3,"Coin {purple}Match{reset} Game","-"*3)
+
+    while game == True:
+        gamestatus: str = input(f"{purple}Do{reset} you want to toss the coins? (y/n):").lower()
 
         if gamestatus == "y":
-            print(f"-"*3,"Coin {purple}Match{reset} Game","-"*3)
+            
+            print("Tossing...")
+
+            pass
 
         elif gamestatus == "n":
+            
+            game = False
 
         else: 
             print("Input is invalid. Please try again.")
